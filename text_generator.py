@@ -26,10 +26,7 @@ try:
         {
             "role": "user",
             "content": """
-                        je veux que tu me parle de naruto et la philosophie du nihilism et exisctantialism dans 
-                        ce manga en arabe imagine que t'es entraint de créer un réel, tu veux que ça soit engageant
-                        et avec un arabe soutenu et un petit peu poetique, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe 
-                        que tu vas générer sera utilisé pour un projet et donc sera integrer dans du code, utilise de la ponctuation qui entrave pas le code en python
+                        
                         """
         }
     ]
