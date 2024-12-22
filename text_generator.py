@@ -22,18 +22,26 @@ text_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.txt"
 # Create a chat completion
 try:
     # Define the chat messages
+
+    # Read prompt from JSON file
+    with open(r"C:\Users\Sohaib\ReopML\Text-to-speech\prompt.json", 'r', encoding='utf-8') as f:
+
+        # Load the entire JSON (which is a list of dicts)
+        prompt_data_list = json.load(f)
+
+    # Extract the first item's prompt
+    prompt_text = prompt_data_list[0]["prompt"]
+
     messages = [
         {
             "role": "user",
-            "content": """
-                        
-                        """
+            "content": prompt_text
         }
     ]
 
     # Call the OpenAI API for a chat completion
     response = client.chat.completions.create(
-        model="chatgpt-4o-latest",  # Use a valid model name
+        model="gpt-4o",  # Use a valid model name
         messages=messages
     )
 

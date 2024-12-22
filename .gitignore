@@ -2,7 +2,7 @@
 .env
 
 # Ignore the segments directory
-C:\Users\Sohaib\ReopML\Text-to-speech\audios\segments/
 
 # Ignore generated audio files
 C:\Users\Sohaib\ReopML\Text-to-speech\generated_audios/
+C:\Users\Sohaib\ReopML\Text-to-speech\audios/
