@@ -1,13 +1,13 @@
 import os 
 from ollama import chat 
 from ollama import ChatResponse
-from dotenv import load_dotenv 
+#from dotenv import load_dotenv 
 import json
 import datetime
 
 
 # Load environment variables from a .env file (if applicable)
-load_dotenv()
+#load_dotenv()
 
 try:
 
@@ -42,7 +42,7 @@ try:
 
 
     response: ChatResponse = chat(
-        model='mistral-nemo', 
+        model='mixtral', 
         messages=[{
             'role': 'user',
             'content': prompt_content,
@@ -51,6 +51,7 @@ try:
     response_content = response['message']['content'] 
     # or access fields directly from the response object
     print("answer generated")
+    print(response_content)
 
     # Save the response to a JSON file
     json_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.json"

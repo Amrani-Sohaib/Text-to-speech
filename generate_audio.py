@@ -1,6 +1,6 @@
 import os
 from elevenlabs.client import ElevenLabs
-from elevenlabs import play
+from elevenlabs import play, Voice, VoiceSettings
 from dotenv import load_dotenv
 import pickle
 import json
@@ -33,7 +33,8 @@ try:
             text = data['content']  # Fallback for single entry JSON
 
     # Generate audio
-    audio_generator = client.generate(text=text, voice=voice)
+    audio_generator = client.generate(text=text, voice=voice, model="eleven_turbo_v2",
+                                      voice_settings=VoiceSettings(stability=0.71, similarity_boost=0.5))
 
     # Convert the generator to bytes
     audio_bytes = b"".join(audio_generator)
