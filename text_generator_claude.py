@@ -1,5 +1,5 @@
 import os
-import anthropic 
+from anthropic import Anthropic
 from dotenv import load_dotenv
 import json
 import datetime
@@ -8,10 +8,10 @@ import datetime
 load_dotenv()
 
 # Load the OpenAI API key from environment variables
-anthropic.api_key = os.getenv("CLAUDE_API_KEY")
-if not anthropic.api_key:
-    raise ValueError("OPENAI_API_KEY or CLAUDE_API_KEY is not set in the environment variables.")
-client = anthropic.Anthropic()
+api_key = os.getenv("CLAUDE_API_KEY")
+if not api_key:
+    raise ValueError("ANTHROPIC_API_KEY is not set in the environment variables.")
+
 
 # Confirm that the OpenAI client is set up
 print("Anthropic client initialized.")
@@ -19,39 +19,43 @@ print("Anthropic client initialized.")
 # Define the file path for saving the response
 text_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.txt"
 
+
 # Create a chat completion
 try:
-    # Define the chat messages
+    # Initialize the Anthropic client
+    client = Anthropic( 
 
+        api_key=api_key
+        
+    )
+    
     # Read prompt from JSON file
     with open(r"C:\Users\Sohaib\ReopML\Text-to-speech\prompt.json", 'r', encoding='utf-8') as f:
-
-        # Load the entire JSON (which is a list of dicts)
         prompt_data_list = json.load(f)
-
 
     # Extract the first item's prompt
     prompt_text = prompt_data_list[0]["prompt"]
 
-    messages = [
-        {
-            "role": "user",
-            "content": prompt_text
-        }
-    ]
+    # Define the model
+    model_name = "claude-3-5-sonnet-20241022"  # You can make this configurable too
 
-    # Call the OpenAI API for a chat completion
-    response = client.completions.create( 
-        model="claude-3-5-sonnet-20241022",  # Use a valid model name
+    # Create message with system prompt and user content
+    response = client.messages.create(
+        model=model_name,
         max_tokens=1024,
         temperature=0.1,
-        system = "You are an arabic world-class author with a heavy backgroud in manga and philisophy and you shine at making philosophical analysis of great works (manga, anime, cinema, books..)",
-        messages=messages
+        system="You are an arabic world-class author with a heavy background in manga and philosophy and you shine at making philosophical analysis of great works (manga, anime, cinema, books..)",
+        messages=[
+            {
+                "role": "user",
+                "content": prompt_text
+            }
+        ]
     )
 
     # Extract the content of the response
-    response_content = response.choices[0].message.content
-    print("Gpt answer")
+    response_content = response.content[0].text
+    print("Claude's answer:", response_content)
 
     # Save the response to a JSON file
     json_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.json"
@@ -66,7 +70,7 @@ try:
     # Add new response as a dictionary
     data.append({
         "timestamp": str(datetime.datetime.now()),
-        "model": response.model,
+        "model": response.model,  # This will now get the model from the response
         "prompt": prompt_text,
         "content": response_content
     })
@@ -79,5 +83,4 @@ try:
     print(f"Response saved to: {json_file_path}")
 
 except Exception as e:
-    # Handle errors during the API call
-    print("Error creating chat completion:", str(e))
+    print("Error:", str(e))
