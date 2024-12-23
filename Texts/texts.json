@@ -58,5 +58,11 @@
     {
         "timestamp": "2024-12-22 21:08:27.031747",
         "content": "في عالم النينجا حيث الأحلام تُحاك، تتجلى فلسفة العدم بين قناصٍ وسعيٍ بَاك. Naruto، رمز الأمل في وجه الظلام، يقاتل بشغف رغم الألم والأوهام. وجوده يُجسد الكفاح ضد العدمية، حيث الإرادة تنتصر على السلبية. يُعلمنا أن القوة ليست في القوة فحسب، بل في الإرادة التي تدفعنا للأمام رغم المصائب. في أرض حيث الأخطار لا تنتهي، يُعبِّر عن وجودٍ يتحدى التفاهة ويتسامى، يُعلِّمُنا أن نُخلق المعنى في عالم مُتَشتت، وأنّ الحياة في جوهرها ليست إلا ما نصنعها بأيدينا. في كل معركة يواجهها، يُذكرنا بأن الحياة تستحق العيش مهما كان الثمن، فالإرادة الحرة تصنع مصيرنا، والحلم هو المفتاح نحو الخلاص من العدم."
+    },
+    {
+        "timestamp": "2024-12-23 18:24:48.314487",
+        "model": "gpt-4o-2024-08-06",
+        "prompt": "je veux que tu me parle du manga naruto et la philosophie du nihilism et exisctantialism dans ce manga en un arabe littéraire soutenu avec un peu de rhyme  imagine que t'es entraint de créer un réel, tu veux que ça soit engageantet avec un arabe soutenu et un petit peu poetique, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe que tu vas générer sera utilisé pour un projet et donc sera integrer dans du code, utilise de la ponctuation qui entrave pas le code. le text ne doit pas etre très long (12 lignes)  et la réponse doit comporté ce text uniquement avec une ponctuation sans une phrase d'intoduction de ta part",
+        "content": "في كون ناروتو، حيث الأرواح تتلاقى،  \nيجسد الصراع بين الوجود والعدم، فما الأرجى؟  \nفي أعماق النفس يبحث عن معنى الحياة،  \nوتظهر تساؤلات الوجود كما الرياح العاتيه.  \nالعدم يهمس: ما جدوى الجهد والكفاح؟  \nلكن الإرادة ترد: لن أُكبل بالأشباح.  \n  \nكالسيف يقطّع الوهم والضياع،  \nناروتو يُظهر جوهر الإنسان بلا قناع.  \nبلغة الأمل يتحدى اليأس والعدم،  \nتجسيدٌ لأفكار نيتشه في عيون ماركس تطلقت.  \n  \nفتراه يصرخ: لأصنع قدري بيدي،  \nولا أُخضع للقدر ذي الحدود الصلد."
     }
 ]
