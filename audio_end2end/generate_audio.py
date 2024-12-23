@@ -33,8 +33,8 @@ try:
             text = data['content']  # Fallback for single entry JSON
 
     # Generate audio
-    audio_generator = client.generate(text=text, voice=voice, model="eleven_turbo_v2",
-                                      voice_settings=VoiceSettings(stability=0.71, similarity_boost=0.5))
+    audio_generator = client.generate(text=text, voice="Ahmed deep test python", model="eleven_turbo_v2_5",
+                                      voice_settings=VoiceSettings(stability=0.71, similarity_boost=0.7))
 
     # Convert the generator to bytes
     audio_bytes = b"".join(audio_generator)
