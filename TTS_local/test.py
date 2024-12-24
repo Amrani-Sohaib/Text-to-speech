@@ -22,3 +22,4 @@ content = "bonjour je suis amrani sohaib et je suis un étudiant en informatique
 # Text to speech to a file
 tts.tts_to_file(text=content, speaker_wav=r"C:\Users\Sohaib\ReopML\Text-to-speech\audios\full_audios\الأسد والخروف وكلمات المتنبي.wav", language="fr", file_path="output.wav")
 
+ 
