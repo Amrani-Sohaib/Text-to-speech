@@ -16,11 +16,41 @@ if not api_key:
 # Initialize ElevenLabs client
 client = ElevenLabs(api_key=api_key)
 
+# Mapping of voice names to IDs
+voice_map = {
+    'Deep Ahmed': 'Y99ruc9eEwTvDlDIWXFz',
+    'Ahmed Fakhouri': '7vV1oOAuJqnI0gCVx8qj',
+    'Ahmed Deep Test Python': 'wXwswnY4o9dwxVEULZPX'
+}
+
+# Display options for the user
+print("Veuillez choisir une voix parmi les suivantes :")
+voice_names = list(voice_map.keys())  # Get the names of the voices
+for i, name in enumerate(voice_names, 1):
+    print(f"{i}. {name}")
+
+# Ask the user to select a voice
+while True:
+    try:
+        choice = int(input("Entrez le numéro correspondant à votre choix : "))
+        if 1 <= choice <= len(voice_names):
+            selected_name = voice_names[choice - 1]
+            selected_id = voice_map[selected_name]
+            print(f"Vous avez choisi : {selected_name} (ID: {selected_id})")
+            break
+        else:
+            print("Veuillez entrer un numéro valide.")
+    except ValueError:
+        print("Entrée invalide. Veuillez entrer un numéro.")
+
+# Use the selected ID in further processing
+# For example:
+print(f"Utilisation de la voix avec l'ID : {selected_id}")
 
 
 # deep ahmed Y99ruc9eEwTvDlDIWXFz ; ahmed fakhoury 7vV1oOAuJqnI0gCVx8qj ; ahmed deep test python wXwswnY4o9dwxVEULZPX
 voice = client.voices.get(
-    voice_id="7vV1oOAuJqnI0gCVx8qj",
+    voice_id=selected_id,
 )
 
 # Define the audio generation process
