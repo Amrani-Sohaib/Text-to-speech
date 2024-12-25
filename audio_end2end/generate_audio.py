@@ -16,11 +16,18 @@ if not api_key:
 # Initialize ElevenLabs client
 client = ElevenLabs(api_key=api_key)
 
+
+
+# deep ahmed Y99ruc9eEwTvDlDIWXFz ; ahmed fakhoury 7vV1oOAuJqnI0gCVx8qj ; ahmed deep test python wXwswnY4o9dwxVEULZPX
+voice = client.voices.get(
+    voice_id="7vV1oOAuJqnI0gCVx8qj",
+)
+
 # Define the audio generation process
 try:
     # Load the cloned voice object
-    with open("cloned_voice.pkl", "rb") as file:
-        voice = pickle.load(file)
+    #with open("cloned_voice.pkl", "rb") as file:
+     #   voice = pickle.load(file)
 
     # Read text from JSON file
     with open(r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.json", "r", encoding='utf-8') as json_file:
@@ -33,14 +40,14 @@ try:
             text = data['content']  # Fallback for single entry JSON
 
     # Generate audio
-    audio_generator = client.generate(text=text, voice="Ahmed deep test python", model="eleven_turbo_v2_5",
-                                      voice_settings=VoiceSettings(stability=0.71, similarity_boost=0.7))
+    audio_generator = client.generate(text=text, voice=voice, model="eleven_turbo_v2_5",
+                                      voice_settings=VoiceSettings(stability=0.65, similarity_boost=0.8))
 
     # Convert the generator to bytes
     audio_bytes = b"".join(audio_generator)
 
     # Play and save the audio
-    output_dir = r"C:\Users\Sohaib\ReopML\Text-to-speech\generated_audios"
+    output_dir = r"C:\Users\Sohaib\ReopML\Text-to-speech\workflow_audios"
     os.makedirs(output_dir, exist_ok=True)
 
     # Determine the next file number
@@ -61,3 +68,5 @@ try:
 
 except Exception as e:
     print(f"An error occurred while generating audio: {e}")
+
+

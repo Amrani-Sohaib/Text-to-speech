@@ -34,7 +34,7 @@ try:
         prompt_data_list = json.load(f)
 
     # Extract the first item's prompt
-    prompt_text = prompt_data_list[0]["prompt"]
+    prompt_text = prompt_data_list[2]["prompt_guts"]
 
     # Define the model
     model_name = "claude-3-5-sonnet-20241022"  # You can make this configurable too
@@ -43,8 +43,10 @@ try:
     response = client.messages.create(
         model=model_name,
         max_tokens=1024,
-        temperature=0.1,
-        system="You are an arabic world-class author with a heavy background in manga and philosophy and you shine at making philosophical analysis of great works (manga, anime, cinema, books..)",
+        temperature=0.0,
+        system="""You are an arabic world-class author with a heavy background in manga and philosophy 
+                  and you shine at making philosophical analysis of great works (manga, anime, cinema, books..).
+                  Be formal and use a poetic tone.""",
         messages=[
             {
                 "role": "user",
@@ -53,9 +55,10 @@ try:
         ]
     )
 
+
     # Extract the content of the response
     response_content = response.content[0].text
-    print("Claude's answer:", response_content)
+    print("Claude's answer")
 
     # Save the response to a JSON file
     json_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.json"
@@ -84,3 +87,9 @@ try:
 
 except Exception as e:
     print("Error:", str(e))
+
+
+
+
+
+
