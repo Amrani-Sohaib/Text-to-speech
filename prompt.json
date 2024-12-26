@@ -2,9 +2,15 @@
     {
         "prompt_manga_naruto": "je veux que tu me parle du manga naruto et la philosophie du nihilism et exisctantialism dans ce manga en un arabe littéraire soutenu avec un peu de rhyme  imagine que t'es entraint de créer un réel, tu veux que ça soit engageantet avec un arabe soutenu et un petit peu poetique, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe que tu vas générer sera utilisé pour un projet et donc sera integrer dans du code, utilise de la ponctuation qui entrave pas le code. le text ne doit pas etre très long (12 lignes)  et la réponse doit comporté ce text uniquement avec une ponctuation sans une phrase d'intoduction de ta part"
     },
+
     {
         "prompt_itachi": "je veux que tu me parle de itachi et la philosophie dans sa vision du monde en un arabe littéraire soutenu avec un peu de rhyme imagine que t'es entraint de créer un réel, tu veux que ça soit engageantet avec un arabe soutenu, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe que tu vas générer sera utilisé pour un projet et donc sera integrer dans du code, utilise de la ponctuation qui entrave pas le code. le text ne doit pas etre très long (12 lignes) et la réponse doit comporté ce text uniquement avec une ponctuation sans une phrase d'intoduction de ta part"
     },
+
+    {
+        "prompt_geralt": "je veux que tu présente Geralt le presonnage principal de The witcher et de sa vie et sa vision du monde en un arabe littéraire soutenu imagine que t'es entraint de créer un réel, tu veux que ça soit engageantet avec un arabe soutenu, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe, utilise de la ponctuation qui entrave pas le code. le text ne doit pas etre très long (12 lignes) et la réponse doit comporté ce text uniquement avec la diacritique et une ponctuation qui indique le rythme de lecture, et sans une phrase d'intoduction de ta part"
+    },
+
     {
         "prompt_guts": "je veux que tu présente Guts le presonnage principal de berzerk la philosophie dans sa vision du monde et ses actions en un arabe littéraire soutenu avec un peu de rhyme imagine que t'es entraint de créer un réel, tu veux que ça soit engageantet avec un arabe soutenu, avec la manière de Ahmed fakhoury. prend en compte que le texte arabe que tu vas générer sera utilisé pour un projet et donc sera integrer dans du code, utilise de la ponctuation qui entrave pas le code. le text ne doit pas etre très long (12 lignes) et la réponse doit comporté ce text uniquement avec la diacritique et une ponctuation qui indique le rythme de lecture, et sans une phrase d'intoduction de ta part"
     }

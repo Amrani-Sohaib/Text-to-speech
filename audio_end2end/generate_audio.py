@@ -71,7 +71,7 @@ try:
 
     # Generate audio
     audio_generator = client.generate(text=text, voice=voice, model="eleven_turbo_v2_5",
-                                      voice_settings=VoiceSettings(stability=0.65, similarity_boost=0.8))
+                                      voice_settings=VoiceSettings(stability=0.65, similarity_boost=0.80))
 
     # Convert the generator to bytes
     audio_bytes = b"".join(audio_generator)

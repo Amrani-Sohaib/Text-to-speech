@@ -34,7 +34,7 @@ try:
         prompt_data_list = json.load(f)
 
     # Extract the first item's prompt
-    prompt_text = prompt_data_list[2]["prompt_guts"]
+    prompt_text = prompt_data_list[2]["prompt_geralt"]
 
     # Define the model
     model_name = "claude-3-5-sonnet-20241022"  # You can make this configurable too
@@ -46,7 +46,9 @@ try:
         temperature=0.0,
         system="""You are an arabic world-class author with a heavy background in manga and philosophy 
                   and you shine at making philosophical analysis of great works (manga, anime, cinema, books..).
-                  Be formal and use a poetic tone.""",
+                  your writing style is very deep yet simple, usinbg simple words to explain complex ideas.
+                  sometimes you can be very poetic and use metaphors to explain your ideas.
+                  Be formal and enthousiast about the topics you talk.""",
         messages=[
             {
                 "role": "user",

@@ -2,7 +2,16 @@
 .env
 
 # Ignore the segments directory
+segments/
 
-# Ignore generated audio files
-C:\Users\Sohaib\ReopML\Text-to-speech\generated_audios/
-C:\Users\Sohaib\ReopML\Text-to-speech\audios/
+# Ignore all audio files
+*.mp3
+*.wav
+*.webm
+
+# Ignore generated audio and video directories
+generated_audios/
+audios/
+workflow_audios/
+workflow_videos/
+workflow_back_music/
