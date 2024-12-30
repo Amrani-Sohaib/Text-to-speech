@@ -50,12 +50,12 @@ from datasets import load_dataset
 #  - load_in_4bit: If True, attempts to load the model in 4-bit 
 #    precision (quantization), significantly reducing VRAM usage.
 # --------------------------------------------------------------------
-max_seq_length = 2048
+max_seq_length = 3096
 dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 load_in_4bit = True
 
 # Replace "ollama/ollama-model-name" with the actual model you want to fine-tune.
-model_name = "ollama/ollama-model-name"
+model_name = "ollama/ollama-model-llama3.1:latest "
 
 # --------------------------------------------------------------------
 # Step 2: Load Pre-Trained Model and Tokenizer
@@ -90,7 +90,8 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 # --------------------------------------------------------------------
 print("Loading dataset...")
 # Replace "path_to_your_dataset" with the actual path or name of your dataset.
-dataset = load_dataset("path_to_your_dataset")
+dataset = load_dataset("json",
+                       "path_to_your_dataset")
 
 print("Tokenizing dataset...")
 
