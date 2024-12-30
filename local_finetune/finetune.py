@@ -97,17 +97,31 @@ print("Tokenizing dataset...")
 
 def tokenize_function(examples):
     """
-    Tokenize the input text using the model's tokenizer.
-    - Truncation: Cuts off text longer than max_seq_length.
-    - Padding: Ensures each input is padded to max_seq_length, 
-      so that they align in shape.
+    Tokenize the input dataset combining the title (question) and transcription (answer).
     """
-    return tokenizer(
-        examples["text"],        # Adjust if your column name is different
+    inputs = [
+        f"Question: {q}\nAnswer:" for q in examples["title"]
+    ]
+    outputs = examples["transcription"]
+
+    # Tokenize the inputs and outputs
+    model_inputs = tokenizer(
+        inputs,
+        max_length=max_seq_length // 2,  # Reserve space for the answer
         truncation=True,
-        max_length=max_seq_length,
         padding="max_length"
     )
+    labels = tokenizer(
+        outputs,
+        max_length=max_seq_length // 2,
+        truncation=True,
+        padding="max_length"
+    )["input_ids"]
+
+    # Add labels to the model inputs
+    model_inputs["labels"] = labels
+    return model_inputs
+
 
 # Map the tokenize function to each split of the dataset
 tokenized_datasets = dataset.map(tokenize_function, batched=True)
