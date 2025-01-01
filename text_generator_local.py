@@ -40,7 +40,6 @@ try:
         print(f"Error: {e}")
         raise
 
-
     response: ChatResponse = chat(
         model='mixtral', 
         messages=[{
@@ -79,3 +78,5 @@ try:
 except Exception as e:
     # Handle errors during the API call
     print("Error creating chat completion:", str(e))
+    print("end")
+    print("fix error")
