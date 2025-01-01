@@ -1,0 +1,22 @@
+{
+    "train": [
+        {
+            "title": "What is the capital of France?",
+            "processed_text": "The capital of France is Paris."
+        },
+        {
+            "title": "Explain Newton's first law.",
+            "processed_text": "Newton's first law states that an object will remain at rest or in uniform motion unless acted upon by a force."
+        }
+    ],
+    "validation": [
+        {
+            "title": "What is the tallest mountain on Earth?",
+            "processed_text": "The tallest mountain on Earth is Mount Everest."
+        },
+        {
+            "title": "Describe the process of photosynthesis.",
+            "processed_text": "Photosynthesis is the process by which green plants use sunlight to synthesize food from carbon dioxide and water."
+        }
+    ]
+}
