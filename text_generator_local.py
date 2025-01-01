@@ -53,7 +53,7 @@ try:
     print(response_content)
 
     # Save the response to a JSON file
-    json_file_path = r"C:\Users\Sohaib\ReopML\Text-to-speech\Texts\texts.json"
+    json_file_path = r"C:\Users\Sohaib\RepoML\Text-to-speech\Texts\texts.json"
     
     # Create or load existing JSON data
     try:
