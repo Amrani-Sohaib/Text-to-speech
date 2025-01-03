@@ -25,7 +25,7 @@ content_fr = "bonjour je suis amrani sohaib et je suis un étudiant en informati
 
 """
 # Directory containing .mp3 files
-segments_dir = r"C:\Users\Sohaib\ReopML\Text-to-speech\audios\segments"
+segments_dir = r"C:\Users\Sohaib-\RepoML\Text-to-speech\audios\segments"
 
 # Directory to save converted .wav files
 output_dir = os.path.join(segments_dir, "converted_wavs")
