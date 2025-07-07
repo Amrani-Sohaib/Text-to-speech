@@ -40,16 +40,3 @@ Ce projet utilise l'intelligence artificielle pour convertir du texte en parole,
     ```bash
     python train_model.py --data "dossier_de_données"
     ```
-
-## Contribuer
-Les contributions sont les bienvenues ! Veuillez soumettre une pull request ou ouvrir une issue pour discuter des changements que vous souhaitez apporter.
-
-## Licence
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## Auteurs
-- Votre Nom - Créateur et développeur principal
-- Autres contributeurs
-
-## Remerciements
-Merci à toutes les bibliothèques et outils open-source utilisés dans ce projet.
